@@ -10,7 +10,7 @@ ninja.data = [{
       window.location.href = "/";
     },
   },{id: "nav-join-us",
-          title: "Join Us",
+          title: "join us",
           description: "Join us by categories in reversed chronological order. powered by jekyll-scholar.",
           section: "Navigation",
           handler: () => {

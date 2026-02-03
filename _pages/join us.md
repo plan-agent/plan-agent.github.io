@@ -7,19 +7,16 @@ permalink: /join us/
 title: join us
 
 description: Join our research team and contribute to cutting-edge projects.
+  # Welcome for your coming,and there are contact details.
+  
+  #Email:3999144685@qq.com
 
+  #Address: Zhixin Building, Shenzhen University, Shenzhen, China
 nav: true
 
 nav_order: 7
 
 profiles:
-
-  # Welcome for your coming,and there are contact details.
-
-  #Email:3999144685@qq.com
-
-  #Address: Zhixin Building, Shenzhen University, Shenzhen, China
-
   - align: right
 
     image: prof_pic.jpg

@@ -4,11 +4,11 @@ title: about
 permalink: /
 subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
-#profile:
-#  align: right
-#  image: prof_pic.jpg
-#  image_circular: false # crops the image to make it circular
-#  more_info: >
+profile:
+  align: right
+  image: prof_pic.jpg
+  image_circular: false # crops the image to make it circular
+  more_info: >
     <p>555 your office number</p>
     <p>123 your address street</p>
     <p>深圳大学粤海校区致信楼</p>

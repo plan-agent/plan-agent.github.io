@@ -1,5 +1,5 @@
 ---
-layout: join us
+layout: about
 title: join us
 permalink: /join us/
 subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.

@@ -5,24 +5,18 @@ title: join us
 description: members of the lab or group
 nav: true
 nav_order: 7
-
-profiles:
-  # if you want to include more than one profile, just replicate the following block
-  # and create one content file for each profile inside _pages/
-  - align: right
-    image: prof_pic.jpg
-    content: about_einstein.md
-    image_circular: false # crops the image to make it circular
-    more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>深圳大学粤海校区致信楼</p>
-  - align: left
-    image: prof_pic.jpg
-    content: about_einstein.md
-    image_circular: false # crops the image to make it circular
-    more_info: >
-      <p>555 your office number</p>
-      <p>123 your address street</p>
-      <p>Your City, State 12345</p>
 ---
+
+# join us
+## Join our research team and contribute to cutting-edge projects.
+### Contacts
+
+- Email: 3999144685@qq.com
+- Address: Zhixin Building
+- Shenzhen University, China
+  
+#### Welcome for your coming!
+[know more about us](https://www.szu.edu.cn)（替换为你的实际链接）。
+
+
+

@@ -7,7 +7,7 @@ nav: true
 nav_order: 7
 ---
 
-# Join Us
+### Join Us
 ###### Join our research team and contribute to cutting-edge projects.
 #### Contacts  
 

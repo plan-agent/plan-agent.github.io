@@ -18,7 +18,7 @@ function determineGiscusTheme() {
 
   let giscusAttributes = {
     src: "https://giscus.app/client.js",
-    "data-repo": "pact-lab-szu/pact-lab-szu.github.io",
+    "data-repo": "Plan-lab-szu/Plan-lab-szu.github.io",
     "data-repo-id": "",
     "data-category": "Comments",
     "data-category-id": "",

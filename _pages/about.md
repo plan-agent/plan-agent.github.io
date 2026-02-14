@@ -1,17 +1,17 @@
 ---
 layout: about
-title: about
+title: PLAN Lab
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Personal Linked Agent Network Lab (PLAN Lab)
 
 profile:
   align: right
-  image: szu.jpg
+  image: plan-logo.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>深圳大学粤海校区致信楼</p>
+    <p>PLAN Lab (Personal Linked Agent Network Lab)</p>
+    <p>Shenzhen University, Yuehai Campus</p>
+    <p>Shenzhen, China</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false # includes social icons at the bottom of the page
@@ -27,8 +27,14 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-SZU Plan Lab .Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+PLAN Lab stands for **Personal Linked Agent Network Lab**.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+The name highlights four core ideas:
+- **Personal**: human-centered intelligence and personalized agent services.
+- **Linked**: strong interoperability and structured connections among agents.
+- **Agent**: autonomous, collaborative, and adaptive intelligent entities.
+- **Network**: large-scale connected ecosystems, or the **Agent Internet**.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+The word **PLAN** also represents blueprint thinking and long-term system design. Our vision is not isolated agents, but interoperable agent networks that can support next-generation standards, infrastructure, and real-world applications.
+
+PLAN Lab is also known in Chinese as **普兰实验室 / 蓝图实验室**.

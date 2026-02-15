@@ -95,10 +95,11 @@ ul.task-list input[type="checkbox"] {
     }
 
     img {
-      width: 140px !important;
-      height: 90px !important;
-      object-fit: cover;
-      border-radius: 50% / 35% !important;
+      width: 110px !important;
+      height: 150px !important;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 45% / 50% !important;
       display: block;
       margin: 0 auto;
     }

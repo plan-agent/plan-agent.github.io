@@ -1,10 +1,10 @@
 ---
 layout: profiles
 permalink: /people/
-title: people
+title: People
 description: Faculty members of PLAN Lab
 nav: true
-nav_order: 7
+nav_order: 2
 
 profiles:
   - align: right

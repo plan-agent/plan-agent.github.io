@@ -556,18 +556,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="studentId" class="form-label">
-                        学号<span class="required">*</span>
+                    <label for="school" class="form-label">
+                        学校<span class="required">*</span>
                     </label>
                     <input 
                         type="text" 
-                        id="studentId" 
-                        name="studentId" 
+                        id="school" 
+                        name="school" 
                         class="form-input" 
-                        placeholder="请输入您的学号"
+                        placeholder="请输入您的学校名称（如：深圳大学）"
                         required
                     >
-                    <div class="error-message">请输入学号</div>
+                    <div class="error-message">请输入学校</div>
                 </div>
 
                 <div class="form-group">
@@ -664,6 +664,25 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="introduction" class="form-label">
+                        个人介绍<span class="required">*</span>
+                    </label>
+                    <textarea 
+                        id="introduction" 
+                        name="introduction" 
+                        class="form-input" 
+                        rows="6"
+                        placeholder="请介绍您的相关信息（我们将根据此信息进行选拔）：&#10;1. 技术背景与编程经验（如：熟悉 Python、做过哪些项目等）&#10;2. 个人特长与优势&#10;3. 参加本次培训的目标与期望&#10;4. 您想做什么样的 Agent 项目或应用方向&#10;&#10;建议填写 100-300 字"
+                        required
+                        style="resize: vertical; min-height: 150px; line-height: 1.6;"
+                    ></textarea>
+                    <div class="error-message">请填写个人介绍</div>
+                    <div style="font-size: 12px; color: #64748b; margin-top: 6px;">
+                        💡 提示：详细的介绍有助于我们更好地了解您，提高录取机会
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <div class="checkbox-group">
                         <input type="checkbox" id="confirm" name="confirm" required>
                         <label for="confirm">
@@ -671,6 +690,15 @@
                         </label>
                     </div>
                     <div class="error-message">请确认并勾选</div>
+                </div>
+
+                <div class="form-group">
+                    <div style="padding: 16px; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #2563eb;">
+                        <p style="font-size: 14px; color: #1e40af; margin-bottom: 8px; font-weight: 600;">🔒 隐私保护说明</p>
+                        <p style="font-size: 13px; color: #475569; line-height: 1.6;">
+                            您的报名信息仅用于本次活动的选拔和管理，仅活动组织者和管理员可见。我们承诺不会向第三方泄露您的个人信息。所有数据将严格保密，其他报名者无法查看您的信息。
+                        </p>
+                    </div>
                 </div>
 
                 <button type="submit" class="submit-button" id="submitBtn">
@@ -748,12 +776,20 @@
                 return false;
             }
 
-            // 学号验证（假设学号为8-12位数字）
-            if (field.id === 'studentId') {
-                const studentIdPattern = /^\d{8,12}$/;
-                if (!studentIdPattern.test(value)) {
+            // 学校名称验证（至少2个字符）
+            if (field.id === 'school') {
+                if (value.length < 2) {
                     field.classList.add('error');
-                    field.nextElementSibling.textContent = '请输入正确的学号格式';
+                    field.nextElementSibling.textContent = '请输入完整的学校名称';
+                    return false;
+                }
+            }
+
+            // 个人介绍验证（至少50个字符）
+            if (field.id === 'introduction') {
+                if (value.length < 50) {
+                    field.classList.add('error');
+                    field.nextElementSibling.textContent = '个人介绍至少需要50个字，请详细填写';
                     return false;
                 }
             }

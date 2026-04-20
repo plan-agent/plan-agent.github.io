@@ -226,6 +226,7 @@
         <div class="actions">
             <button class="btn btn-success" onclick="exportToExcel()">📥 导出 Excel</button>
             <button class="btn btn-primary" onclick="exportToJSON()">💾 导出 JSON</button>
+            <button class="btn btn-primary" onclick="exportToGitHubIssues()">🔄 导出到 GitHub Issues</button>
             <button class="btn btn-danger" onclick="clearAllData()">🗑️ 清空数据</button>
             <button class="btn btn-primary" onclick="refreshData()">🔄 刷新</button>
         </div>
@@ -395,6 +396,52 @@
                     alert('数据已清空');
                 }
             }
+        }
+
+        // 导出到 GitHub Issues
+        function exportToGitHubIssues() {
+            if (allData.length === 0) {
+                alert('暂无数据可导出');
+                return;
+            }
+
+            const repo = 'plan-agent/plan-agent.github.io';
+            let markdown = `# 批量创建 GitHub Issues 指南\n\n`;
+            markdown += `将以下数据提交到 GitHub Issues，每条报名信息创建一个 Issue。\n\n`;
+            markdown += `仓库：https://github.com/${repo}/issues\n\n`;
+            markdown += `---\n\n`;
+
+            allData.forEach((item, index) => {
+                markdown += `## Issue ${index + 1}: 【报名】${item.name} - ${item.studentId}\n\n`;
+                markdown += `**标签**: \`报名\`, \`待处理\`\n\n`;
+                markdown += `**内容**:\n\n`;
+                markdown += `\`\`\`markdown\n`;
+                markdown += `## 报名信息\n\n`;
+                markdown += `**报名时间**：${new Date(item.timestamp).toLocaleString('zh-CN')}\n\n`;
+                markdown += `---\n\n`;
+                markdown += `### 基本信息\n`;
+                markdown += `- **姓名**：${item.name}\n`;
+                markdown += `- **学号**：${item.studentId}\n`;
+                markdown += `- **学院**：${item.college}\n`;
+                markdown += `- **专业**：${item.major}\n`;
+                markdown += `- **年级**：${item.grade}\n\n`;
+                markdown += `### 其他信息\n`;
+                markdown += `- **是否自带笔记本电脑**：${item.laptop}\n`;
+                markdown += `- **微信号**：${item.wechat}\n\n`;
+                markdown += `---\n\n`;
+                markdown += `> 此报名信息由报名系统自动生成\n`;
+                markdown += `\`\`\`\n\n`;
+                markdown += `---\n\n`;
+            });
+
+            // 下载为 markdown 文件
+            const blob = new Blob([markdown], { type: 'text/markdown;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `GitHub_Issues_导入_${new Date().toISOString().slice(0, 10)}.md`;
+            link.click();
+
+            alert(`已导出 ${allData.length} 条报名信息。\n\n请访问 GitHub 仓库手动创建 Issues，或使用自动化工具批量导入。`);
         }
 
         // 刷新数据

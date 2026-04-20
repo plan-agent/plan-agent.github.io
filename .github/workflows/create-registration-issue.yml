@@ -1,0 +1,68 @@
+name: Create Registration Issue
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: '姓名'
+        required: true
+      studentId:
+        description: '学号'
+        required: true
+      college:
+        description: '学院'
+        required: true
+      major:
+        description: '专业'
+        required: true
+      grade:
+        description: '年级'
+        required: true
+      laptop:
+        description: '是否自带笔记本电脑'
+        required: true
+      wechat:
+        description: '微信号'
+        required: true
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Create Registration Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueTitle = `【报名】${{ github.event.inputs.name }} - ${{ github.event.inputs.studentId }}`;
+            const issueBody = `
+## 报名信息
+
+**报名时间**：${new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}
+
+---
+
+### 基本信息
+- **姓名**：${{ github.event.inputs.name }}
+- **学号**：${{ github.event.inputs.studentId }}
+- **学院**：${{ github.event.inputs.college }}
+- **专业**：${{ github.event.inputs.major }}
+- **年级**：${{ github.event.inputs.grade }}
+
+### 其他信息
+- **是否自带笔记本电脑**：${{ github.event.inputs.laptop }}
+- **微信号**：${{ github.event.inputs.wechat }}
+
+---
+
+> 此报名信息由报名系统自动生成
+            `.trim();
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: issueTitle,
+              body: issueBody,
+              labels: ['报名', '待处理']
+            });

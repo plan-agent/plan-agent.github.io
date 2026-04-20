@@ -466,21 +466,199 @@
             </p>
         </section>
 
-        <!-- Google Form 嵌入 -->
-        <section class="section" id="register-form" style="padding: 0; overflow: hidden;">
-            <iframe 
-                src="https://docs.google.com/forms/d/e/1FAIpQLSd4vEr9xHqVCFpJGxHb8kN6fMDpqBBkqD0YmVZxQxOxhzFY3w/viewform?embedded=true" 
-                width="100%" 
-                height="2400" 
-                frameborder="0" 
-                marginheight="0" 
-                marginwidth="0"
-                style="border-radius: 16px;"
-            >加载中…</iframe>
+        <!-- 报名表单 -->
+        <section class="section" id="register-form">
+            <h2 class="section-title">报名表单</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">
+                        姓名<span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        class="form-input" 
+                        placeholder="请输入您的真实姓名"
+                        required
+                    >
+                    <div class="error-message">请输入姓名</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="school" class="form-label">
+                        学校<span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="school" 
+                        name="school" 
+                        class="form-input" 
+                        placeholder="请输入您的学校名称（如：深圳大学）"
+                        required
+                    >
+                    <div class="error-message">请输入学校</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="college" class="form-label">
+                        学院<span class="required">*</span>
+                    </label>
+                    <select id="college" name="college" class="form-select" required>
+                        <option value="">请选择学院</option>
+                        <option value="计算机与软件学院">计算机与软件学院</option>
+                        <option value="电子与信息工程学院">电子与信息工程学院</option>
+                        <option value="机电与控制工程学院">机电与控制工程学院</option>
+                        <option value="数学与统计学院">数学与统计学院</option>
+                        <option value="物理与光电工程学院">物理与光电工程学院</option>
+                        <option value="化学与环境工程学院">化学与环境工程学院</option>
+                        <option value="生命与海洋科学学院">生命与海洋科学学院</option>
+                        <option value="医学部">医学部</option>
+                        <option value="材料学院">材料学院</option>
+                        <option value="土木与交通工程学院">土木与交通工程学院</option>
+                        <option value="建筑与城市规划学院">建筑与城市规划学院</option>
+                        <option value="经济学院">经济学院</option>
+                        <option value="管理学院">管理学院</option>
+                        <option value="法学院">法学院</option>
+                        <option value="人文学院">人文学院</option>
+                        <option value="外国语学院">外国语学院</option>
+                        <option value="传播学院">传播学院</option>
+                        <option value="艺术学部">艺术学部</option>
+                        <option value="师范学院">师范学院</option>
+                        <option value="其他">其他</option>
+                    </select>
+                    <div class="error-message">请选择学院</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="major" class="form-label">
+                        专业<span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="major" 
+                        name="major" 
+                        class="form-input" 
+                        placeholder="请输入您的专业"
+                        required
+                    >
+                    <div class="error-message">请输入专业</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="grade" class="form-label">
+                        年级<span class="required">*</span>
+                    </label>
+                    <select id="grade" name="grade" class="form-select" required>
+                        <option value="">请选择年级</option>
+                        <option value="2023级（大一）">2023级（大一）</option>
+                        <option value="2024级（大二）">2024级（大二）</option>
+                        <option value="2025级（大三）">2025级（大三）</option>
+                        <option value="2026级（大四）">2026级（大四）</option>
+                        <option value="研究生">研究生</option>
+                        <option value="博士生">博士生</option>
+                    </select>
+                    <div class="error-message">请选择年级</div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        是否自带笔记本电脑<span class="required">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="laptop" value="是" required>
+                            <span>是</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="laptop" value="否">
+                            <span>否（需要借用）</span>
+                        </label>
+                    </div>
+                    <div class="error-message">请选择是否自带电脑</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="wechat" class="form-label">
+                        微信号<span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="wechat" 
+                        name="wechat" 
+                        class="form-input" 
+                        placeholder="请输入您的微信号，用于后续通知"
+                        required
+                    >
+                    <div class="error-message">请输入微信号</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="background" class="form-label">
+                        个人特长或技术背景<span class="required">*</span>
+                    </label>
+                    <textarea 
+                        id="background" 
+                        name="background" 
+                        class="form-input" 
+                        rows="5"
+                        placeholder="请介绍您的个人特长或技术背景，例如：&#10;• 编程语言掌握情况（Python、Java、C++ 等）&#10;• 参与过的项目或竞赛经验&#10;• 擅长的技术领域（机器学习、Web 开发、数据分析等）&#10;• 其他相关技能或特长&#10;&#10;建议填写 50-200 字"
+                        required
+                        style="resize: vertical; min-height: 120px; line-height: 1.6;"
+                    ></textarea>
+                    <div class="error-message">请填写个人特长或技术背景</div>
+                    <div style="font-size: 12px; color: #64748b; margin-top: 6px;">
+                        💡 提示：详细的背景介绍有助于我们更好地了解您
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectInterest" class="form-label">
+                        您对开发什么样的项目感兴趣<span class="required">*</span>
+                    </label>
+                    <textarea 
+                        id="projectInterest" 
+                        name="projectInterest" 
+                        class="form-input" 
+                        rows="5"
+                        placeholder="请描述您想开发的 Agent 项目或应用方向，例如：&#10;• 智能对话助手&#10;• 自动化办公工具&#10;• 数据分析 Agent&#10;• 个性化学习助手&#10;• 创意应用（请具体说明）&#10;&#10;建议填写 50-200 字"
+                        required
+                        style="resize: vertical; min-height: 120px; line-height: 1.6;"
+                    ></textarea>
+                    <div class="error-message">请填写项目兴趣</div>
+                    <div style="font-size: 12px; color: #64748b; margin-top: 6px;">
+                        💡 提示：清晰的项目想法有助于提高录取机会
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="confirm" name="confirm" required>
+                        <label for="confirm">
+                            我确认以上信息真实有效，愿意遵守活动规则，全程参与「普蓝」首期 OPC+Agent 技能培训双创营的各项活动。
+                        </label>
+                    </div>
+                    <div class="error-message">请确认并勾选</div>
+                </div>
+
+                <div class="form-group">
+                    <div style="padding: 16px; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #2563eb;">
+                        <p style="font-size: 14px; color: #1e40af; margin-bottom: 8px; font-weight: 600;">🔒 隐私保护说明</p>
+                        <p style="font-size: 13px; color: #475569; line-height: 1.6;">
+                            您的报名信息仅用于本次活动的选拔和管理，仅活动组织者和管理员可见。我们承诺不会向第三方泄露您的个人信息。所有数据将严格保密，其他报名者无法查看您的信息。
+                        </p>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button" id="submitBtn">
+                    提交报名
+                </button>
+
+                <div class="feedback" id="feedback"></div>
+            </form>
         </section>
 
-        <!-- 以下是原有的表单代码，现在被注释掉，改用 Google Form -->
-        <!--
+        <!-- 以下是原来被注释的代码，现已恢复 -->
 
         <!-- 课程模块 -->
         <section class="section">
@@ -742,7 +920,6 @@
 
                 <div class="feedback" id="feedback"></div>
             </form>
-        -->
         </section>
     </div>
 
@@ -752,8 +929,6 @@
         <p style="margin-top: 8px; font-size: 12px; opacity: 0.7;">如有疑问，请联系活动组委会</p>
     </footer>
 
-    <!-- 原有的 JavaScript 代码已注释，改用 Google Form -->
-    <!--
     <script>
         // 表单验证与提交
         const form = document.getElementById('registrationForm');
@@ -1107,7 +1282,6 @@
                 }
             }
         }, { passive: false });
-    -->
     </script>
 </body>
 </html>

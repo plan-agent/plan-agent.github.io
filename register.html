@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>「普蓝」首期 OPC+Agent 技能培训双创营 - 报名</title>
+    <meta name="description" content="深圳大学「普蓝」OPC+Agent 技能培训双创营，探索 AI 智能体时代的创新实践">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #3b82f6;
+            --accent-color: #60a5fa;
+            --dark-bg: #0f172a;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--light-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* 顶部 Banner */
+        .banner {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,122.7C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .banner h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .banner .subtitle {
+            font-size: 15px;
+            opacity: 0.95;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .banner .tagline {
+            font-size: 13px;
+            opacity: 0.85;
+            margin-bottom: 24px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 14px 32px;
+            background: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* 内容区域 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 32px 24px;
+            margin: 24px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        /* 课程模块 */
+        .course-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .course-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateX(4px);
+        }
+
+        .course-card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .course-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* 招募对象 */
+        .target-list {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .target-list li {
+            padding: 12px 16px;
+            background: var(--light-bg);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .target-list li::before {
+            content: '✓';
+            color: var(--success-color);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* 活动信息 */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 16px;
+            background: var(--light-bg);
+            border-radius: 8px;
+            gap: 12px;
+        }
+
+        .info-icon {
+            font-size: 20px;
+            min-width: 24px;
+        }
+
+        .info-content {
+            flex: 1;
+        }
+
+        .info-label {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .info-value {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* 表单样式 */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-label .required {
+            color: var(--error-color);
+            margin-left: 4px;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: white;
+            color: var(--text-dark);
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-input.error {
+            border-color: var(--error-color);
+        }
+
+        .error-message {
+            color: var(--error-color);
+            font-size: 13px;
+            margin-top: 6px;
+            display: none;
+        }
+
+        .form-input.error + .error-message {
+            display: block;
+        }
+
+        /* 单选框组 */
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 8px;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .radio-label input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        /* 复选框 */
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 16px;
+            background: #fef3c7;
+            border-radius: 8px;
+            border: 2px solid #fbbf24;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            flex: 1;
+            font-size: 14px;
+            color: var(--text-dark);
+            cursor: pointer;
+            line-height: 1.6;
+        }
+
+        /* 提交按钮 */
+        .submit-button {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .submit-button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* 提交反馈 */
+        .feedback {
+            display: none;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .feedback.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 2px solid #10b981;
+        }
+
+        .feedback.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 2px solid #ef4444;
+        }
+
+        /* 页脚 */
+        .footer {
+            text-align: center;
+            padding: 32px 20px;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+        /* 响应式设计 */
+        @media (min-width: 640px) {
+            .banner h1 {
+                font-size: 36px;
+            }
+
+            .banner .subtitle {
+                font-size: 18px;
+            }
+
+            .banner .tagline {
+                font-size: 15px;
+            }
+
+            .course-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 加载动画 */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部 Banner -->
+    <div class="banner">
+        <div class="banner-content">
+            <h1>「普蓝」首期 OPC+Agent<br>技能培训双创营</h1>
+            <p class="subtitle">探索 AI 智能体时代的创新实践</p>
+            <p class="tagline">深圳大学计算机与软件学院 × AI 赋能未来</p>
+            <a href="#register-form" class="cta-button">立即报名</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- 活动简介 -->
+        <section class="section">
+            <h2 class="section-title">活动简介</h2>
+            <p class="intro-text">
+                在 AI 智能体（Agent）技术快速发展的背景下，「普蓝」首期 OPC+Agent 技能培训双创营应运而生。
+                本次活动由深圳大学计算机与软件学院主办，旨在帮助同学们掌握前沿的 AI Agent 开发技能，
+                探索 OPC（OpenAI Protocol Compatible）生态与智能体技术的深度融合，为未来的科研与创新创业打下坚实基础。
+            </p>
+            <p class="intro-text">
+                我们将通过理论讲授、实战演练、项目孵化等多种形式，带领大家从零开始构建属于自己的 AI 智能体应用，
+                并在此过程中培养计算思维、工程实践能力和创新意识。
+            </p>
+        </section>
+
+        <!-- 课程模块 -->
+        <section class="section">
+            <h2 class="section-title">课程模块</h2>
+            <div class="course-grid">
+                <div class="course-card">
+                    <h3>📚 模块一：Agent 基础理论</h3>
+                    <p>了解 AI Agent 的核心概念、架构设计与应用场景，掌握智能体的基本工作原理。</p>
+                </div>
+                <div class="course-card">
+                    <h3>🔧 模块二：OPC 生态实战</h3>
+                    <p>深入学习 OpenAI Protocol Compatible 协议，掌握多种大模型接口的统一调用方法。</p>
+                </div>
+                <div class="course-card">
+                    <h3>💻 模块三：Agent 开发实践</h3>
+                    <p>通过实战项目学习 Agent 的规划、工具调用、记忆管理等核心技术。</p>
+                </div>
+                <div class="course-card">
+                    <h3>🚀 模块四：项目孵化与展示</h3>
+                    <p>分组完成创新项目，导师一对一指导，最终进行项目路演与成果展示。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 招募对象 -->
+        <section class="section">
+            <h2 class="section-title">招募对象</h2>
+            <ul class="target-list">
+                <li>对 AI、智能体技术感兴趣的深圳大学在校生</li>
+                <li>具备一定编程基础（Python 优先），愿意学习新技术</li>
+                <li>对创新创业、科研项目有热情和想法</li>
+                <li>能够全程参与培训和项目开发的同学</li>
+                <li>欢迎跨学科、跨专业的同学报名参加</li>
+            </ul>
+        </section>
+
+        <!-- 活动信息 -->
+        <section class="section">
+            <h2 class="section-title">活动信息</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon">📅</div>
+                    <div class="info-content">
+                        <div class="info-label">活动时间</div>
+                        <div class="info-value">2026年5月 - 6月（共6周）</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <div class="info-label">活动地点</div>
+                        <div class="info-value">深圳大学粤海校区</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">👥</div>
+                    <div class="info-content">
+                        <div class="info-label">招募人数</div>
+                        <div class="info-value">30-50人</div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">💰</div>
+                    <div class="info-content">
+                        <div class="info-label">活动费用</div>
+                        <div class="info-value">免费（提供教材及资源）</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 报名表单 -->
+        <section class="section" id="register-form">
+            <h2 class="section-title">报名表单</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">
+                        姓名<span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        class="form-input" 
+                        placeholder="请输入您的真实姓名"
+                        required
+                    >
+                    <div class="error-message">请输入姓名</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentId" class="form-label">
+                        学号<span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="studentId" 
+                        name="studentId" 
+                        class="form-input" 
+                        placeholder="请输入您的学号"
+                        required
+                    >
+                    <div class="error-message">请输入学号</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="college" class="form-label">
+                        学院<span class="required">*</span>
+                    </label>
+                    <select id="college" name="college" class="form-select" required>
+                        <option value="">请选择学院</option>
+                        <option value="计算机与软件学院">计算机与软件学院</option>
+                        <option value="电子与信息工程学院">电子与信息工程学院</option>
+                        <option value="机电与控制工程学院">机电与控制工程学院</option>
+                        <option value="数学与统计学院">数学与统计学院</option>
+                        <option value="物理与光电工程学院">物理与光电工程学院</option>
+                        <option value="化学与环境工程学院">化学与环境工程学院</option>
+                        <option value="生命与海洋科学学院">生命与海洋科学学院</option>
+                        <option value="医学部">医学部</option>
+                        <option value="材料学院">材料学院</option>
+                        <option value="土木与交通工程学院">土木与交通工程学院</option>
+                        <option value="建筑与城市规划学院">建筑与城市规划学院</option>
+                        <option value="经济学院">经济学院</option>
+                        <option value="管理学院">管理学院</option>
+                        <option value="法学院">法学院</option>
+                        <option value="人文学院">人文学院</option>
+                        <option value="外国语学院">外国语学院</option>
+                        <option value="传播学院">传播学院</option>
+                        <option value="艺术学部">艺术学部</option>
+                        <option value="师范学院">师范学院</option>
+                        <option value="其他">其他</option>
+                    </select>
+                    <div class="error-message">请选择学院</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="major" class="form-label">
+                        专业<span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="major" 
+                        name="major" 
+                        class="form-input" 
+                        placeholder="请输入您的专业"
+                        required
+                    >
+                    <div class="error-message">请输入专业</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="grade" class="form-label">
+                        年级<span class="required">*</span>
+                    </label>
+                    <select id="grade" name="grade" class="form-select" required>
+                        <option value="">请选择年级</option>
+                        <option value="2023级（大一）">2023级（大一）</option>
+                        <option value="2024级（大二）">2024级（大二）</option>
+                        <option value="2025级（大三）">2025级（大三）</option>
+                        <option value="2026级（大四）">2026级（大四）</option>
+                        <option value="研究生">研究生</option>
+                        <option value="博士生">博士生</option>
+                    </select>
+                    <div class="error-message">请选择年级</div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">
+                        是否自带笔记本电脑<span class="required">*</span>
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="laptop" value="是" required>
+                            <span>是</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="laptop" value="否">
+                            <span>否（需要借用）</span>
+                        </label>
+                    </div>
+                    <div class="error-message">请选择是否自带电脑</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="wechat" class="form-label">
+                        微信号<span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="wechat" 
+                        name="wechat" 
+                        class="form-input" 
+                        placeholder="请输入您的微信号，用于后续通知"
+                        required
+                    >
+                    <div class="error-message">请输入微信号</div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="confirm" name="confirm" required>
+                        <label for="confirm">
+                            我确认以上信息真实有效，愿意遵守活动规则，全程参与「普蓝」首期 OPC+Agent 技能培训双创营的各项活动。
+                        </label>
+                    </div>
+                    <div class="error-message">请确认并勾选</div>
+                </div>
+
+                <button type="submit" class="submit-button" id="submitBtn">
+                    提交报名
+                </button>
+
+                <div class="feedback" id="feedback"></div>
+            </form>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2026 深圳大学计算机与软件学院 | 「普蓝」AI 技能培训项目</p>
+        <p style="margin-top: 8px; font-size: 12px; opacity: 0.7;">如有疑问，请联系活动组委会</p>
+    </footer>
+
+    <script>
+        // 表单验证与提交
+        const form = document.getElementById('registrationForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const feedback = document.getElementById('feedback');
+
+        // 配置提交接口（可以替换为实际的接口地址）
+        const FORM_SUBMIT_URL = 'https://formspree.io/f/YOUR_FORM_ID'; // 请替换为实际的 Formspree ID
+        // 或者使用其他表单服务，如 Google Forms, 企业微信等
+
+        // 实时验证
+        const inputs = form.querySelectorAll('input[required], select[required]');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                validateField(this);
+            });
+
+            input.addEventListener('input', function() {
+                if (this.classList.contains('error')) {
+                    validateField(this);
+                }
+            });
+        });
+
+        function validateField(field) {
+            const value = field.value.trim();
+            
+            if (field.type === 'checkbox') {
+                if (!field.checked) {
+                    field.classList.add('error');
+                    return false;
+                } else {
+                    field.classList.remove('error');
+                    return true;
+                }
+            }
+
+            if (field.type === 'radio') {
+                const radioGroup = form.querySelectorAll(`input[name="${field.name}"]`);
+                const isChecked = Array.from(radioGroup).some(radio => radio.checked);
+                radioGroup.forEach(radio => {
+                    if (!isChecked) {
+                        radio.classList.add('error');
+                    } else {
+                        radio.classList.remove('error');
+                    }
+                });
+                return isChecked;
+            }
+
+            if (!value) {
+                field.classList.add('error');
+                return false;
+            }
+
+            // 学号验证（假设学号为8-12位数字）
+            if (field.id === 'studentId') {
+                const studentIdPattern = /^\d{8,12}$/;
+                if (!studentIdPattern.test(value)) {
+                    field.classList.add('error');
+                    field.nextElementSibling.textContent = '请输入正确的学号格式';
+                    return false;
+                }
+            }
+
+            field.classList.remove('error');
+            return true;
+        }
+
+        // 表单提交
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // 验证所有字段
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!validateField(input)) {
+                    isValid = false;
+                }
+            });
+
+            // 验证单选框
+            const radioGroups = {};
+            form.querySelectorAll('input[type="radio"][required]').forEach(radio => {
+                radioGroups[radio.name] = true;
+            });
+
+            Object.keys(radioGroups).forEach(groupName => {
+                const radios = form.querySelectorAll(`input[name="${groupName}"]`);
+                const isChecked = Array.from(radios).some(radio => radio.checked);
+                if (!isChecked) {
+                    isValid = false;
+                    radios[0].classList.add('error');
+                }
+            });
+
+            if (!isValid) {
+                showFeedback('请正确填写所有必填项', 'error');
+                // 滚动到第一个错误字段
+                const firstError = form.querySelector('.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return;
+            }
+
+            // 收集表单数据
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // 禁用提交按钮
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '提交中<span class="loading"></span>';
+
+            try {
+                // 提交数据
+                // 方法1: 使用 Formspree
+                const response = await fetch(FORM_SUBMIT_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    showFeedback('✓ 报名成功！我们会尽快通过微信与您联系。', 'success');
+                    form.reset();
+                    
+                    // 3秒后隐藏成功消息
+                    setTimeout(() => {
+                        feedback.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('提交失败');
+                }
+            } catch (error) {
+                console.error('提交错误:', error);
+                
+                // 如果没有配置接口，则显示提示信息并保存到本地
+                showFeedback('提交功能需要配置表单接口。您的信息已临时保存，请联系管理员配置提交接口。', 'error');
+                
+                // 临时保存到 localStorage（仅用于演示）
+                const submissions = JSON.parse(localStorage.getItem('registrations') || '[]');
+                submissions.push({
+                    ...data,
+                    timestamp: new Date().toISOString()
+                });
+                localStorage.setItem('registrations', JSON.stringify(submissions));
+                console.log('报名信息已保存到本地:', data);
+            } finally {
+                // 恢复提交按钮
+                submitBtn.disabled = false;
+                submitBtn.textContent = '提交报名';
+            }
+        });
+
+        function showFeedback(message, type) {
+            feedback.textContent = message;
+            feedback.className = `feedback ${type}`;
+            feedback.style.display = 'block';
+            feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // 平滑滚动到表单
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // 防止微信浏览器下拉刷新
+        document.body.addEventListener('touchmove', function(e) {
+            if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                if (scrollTop === 0) {
+                    e.preventDefault();
+                }
+            }
+        }, { passive: false });
+    </script>
+</body>
+</html>

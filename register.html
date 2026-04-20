@@ -446,7 +446,7 @@
         <div class="banner-content">
             <h1>「普蓝」首期 OPC+Agent<br>技能培训双创营</h1>
             <p class="subtitle">探索 AI 智能体时代的创新实践</p>
-            <p class="tagline">深圳大学计算机与软件学院 × AI 赋能未来</p>
+            <p class="tagline">深圳大学电子与信息工程学院 × AI 赋能未来</p>
             <a href="#register-form" class="cta-button">立即报名</a>
         </div>
     </div>
@@ -457,7 +457,7 @@
             <h2 class="section-title">活动简介</h2>
             <p class="intro-text">
                 在 AI 智能体（Agent）技术快速发展的背景下，「普蓝」首期 OPC+Agent 技能培训双创营应运而生。
-                本次活动由深圳大学计算机与软件学院主办，旨在帮助同学们掌握前沿的 AI Agent 开发技能，
+                本次活动由深圳大学电子与信息工程学院主办，旨在帮助同学们掌握前沿的 AI Agent 开发技能，
                 探索 OPC（OpenAI Protocol Compatible）生态与智能体技术的深度融合，为未来的科研与创新创业打下坚实基础。
             </p>
             <p class="intro-text">
@@ -664,21 +664,40 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="introduction" class="form-label">
-                        个人介绍<span class="required">*</span>
+                    <label for="background" class="form-label">
+                        个人特长或技术背景<span class="required">*</span>
                     </label>
                     <textarea 
-                        id="introduction" 
-                        name="introduction" 
+                        id="background" 
+                        name="background" 
                         class="form-input" 
-                        rows="6"
-                        placeholder="请介绍您的相关信息（我们将根据此信息进行选拔）：&#10;1. 技术背景与编程经验（如：熟悉 Python、做过哪些项目等）&#10;2. 个人特长与优势&#10;3. 参加本次培训的目标与期望&#10;4. 您想做什么样的 Agent 项目或应用方向&#10;&#10;建议填写 100-300 字"
+                        rows="5"
+                        placeholder="请介绍您的个人特长或技术背景，例如：&#10;• 编程语言掌握情况（Python、Java、C++ 等）&#10;• 参与过的项目或竞赛经验&#10;• 擅长的技术领域（机器学习、Web 开发、数据分析等）&#10;• 其他相关技能或特长&#10;&#10;建议填写 50-200 字"
                         required
-                        style="resize: vertical; min-height: 150px; line-height: 1.6;"
+                        style="resize: vertical; min-height: 120px; line-height: 1.6;"
                     ></textarea>
-                    <div class="error-message">请填写个人介绍</div>
+                    <div class="error-message">请填写个人特长或技术背景</div>
                     <div style="font-size: 12px; color: #64748b; margin-top: 6px;">
-                        💡 提示：详细的介绍有助于我们更好地了解您，提高录取机会
+                        💡 提示：详细的背景介绍有助于我们更好地了解您
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectInterest" class="form-label">
+                        您对开发什么样的项目感兴趣<span class="required">*</span>
+                    </label>
+                    <textarea 
+                        id="projectInterest" 
+                        name="projectInterest" 
+                        class="form-input" 
+                        rows="5"
+                        placeholder="请描述您想开发的 Agent 项目或应用方向，例如：&#10;• 智能对话助手&#10;• 自动化办公工具&#10;• 数据分析 Agent&#10;• 个性化学习助手&#10;• 创意应用（请具体说明）&#10;&#10;建议填写 50-200 字"
+                        required
+                        style="resize: vertical; min-height: 120px; line-height: 1.6;"
+                    ></textarea>
+                    <div class="error-message">请填写项目兴趣</div>
+                    <div style="font-size: 12px; color: #64748b; margin-top: 6px;">
+                        💡 提示：清晰的项目想法有助于提高录取机会
                     </div>
                 </div>
 
@@ -712,7 +731,7 @@
 
     <!-- 页脚 -->
     <footer class="footer">
-        <p>© 2026 深圳大学计算机与软件学院 | 「普蓝」AI 技能培训项目</p>
+        <p>© 2026 深圳大学电子与信息工程学院 | 「普蓝」AI 技能培训项目</p>
         <p style="margin-top: 8px; font-size: 12px; opacity: 0.7;">如有疑问，请联系活动组委会</p>
     </footer>
 
@@ -785,11 +804,20 @@
                 }
             }
 
-            // 个人介绍验证（至少50个字符）
-            if (field.id === 'introduction') {
-                if (value.length < 50) {
+            // 个人特长或技术背景验证（至少30个字符）
+            if (field.id === 'background') {
+                if (value.length < 30) {
                     field.classList.add('error');
-                    field.nextElementSibling.textContent = '个人介绍至少需要50个字，请详细填写';
+                    field.nextElementSibling.textContent = '请至少填写30个字，详细介绍您的背景';
+                    return false;
+                }
+            }
+
+            // 项目兴趣验证（至少30个字符）
+            if (field.id === 'projectInterest') {
+                if (value.length < 30) {
+                    field.classList.add('error');
+                    field.nextElementSibling.textContent = '请至少填写30个字，详细描述您的项目想法';
                     return false;
                 }
             }

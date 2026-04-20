@@ -694,9 +694,20 @@
         const submitBtn = document.getElementById('submitBtn');
         const feedback = document.getElementById('feedback');
 
-        // 配置提交接口（可以替换为实际的接口地址）
-        const FORM_SUBMIT_URL = 'https://formspree.io/f/YOUR_FORM_ID'; // 请替换为实际的 Formspree ID
-        // 或者使用其他表单服务，如 Google Forms, 企业微信等
+        // Google Forms 配置
+        const GOOGLE_FORM_ID = '1ntxIc-ho16hLu9O1Mn-D9RHvS_YBdCvR7fg8tBnC7CM';
+        const GOOGLE_FORM_URL = `https://docs.google.com/forms/d/e/${GOOGLE_FORM_ID}/formResponse`;
+        
+        // Google Forms 字段映射（entry IDs 需要从预填充链接中获取）
+        const FIELD_MAPPING = {
+            name: 'entry.YOUR_NAME_ENTRY_ID',
+            studentId: 'entry.YOUR_STUDENT_ID_ENTRY_ID',
+            college: 'entry.YOUR_COLLEGE_ENTRY_ID',
+            major: 'entry.YOUR_MAJOR_ENTRY_ID',
+            grade: 'entry.YOUR_GRADE_ENTRY_ID',
+            laptop: 'entry.YOUR_LAPTOP_ENTRY_ID',
+            wechat: 'entry.YOUR_WECHAT_ENTRY_ID'
+        };
 
         // 实时验证
         const inputs = form.querySelectorAll('input[required], select[required]');
@@ -806,42 +817,64 @@
             submitBtn.innerHTML = '提交中<span class="loading"></span>';
 
             try {
-                // 提交数据
-                // 方法1: 使用 Formspree
-                const response = await fetch(FORM_SUBMIT_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
+                // 方法1: 直接提交到 Google Forms（使用 iframe 方式）
+                // 创建隐藏的 iframe 用于提交
+                const iframe = document.createElement('iframe');
+                iframe.name = 'hidden_iframe';
+                iframe.style.display = 'none';
+                document.body.appendChild(iframe);
 
-                if (response.ok) {
+                // 创建临时表单
+                const tempForm = document.createElement('form');
+                tempForm.target = 'hidden_iframe';
+                tempForm.method = 'POST';
+                tempForm.action = GOOGLE_FORM_URL;
+
+                // 如果 entry IDs 已配置，使用 Google Forms
+                if (!FIELD_MAPPING.name.includes('YOUR_')) {
+                    // 添加字段映射
+                    Object.keys(data).forEach(key => {
+                        if (FIELD_MAPPING[key]) {
+                            const input = document.createElement('input');
+                            input.type = 'hidden';
+                            input.name = FIELD_MAPPING[key];
+                            input.value = data[key];
+                            tempForm.appendChild(input);
+                        }
+                    });
+
+                    document.body.appendChild(tempForm);
+                    tempForm.submit();
+
+                    // 显示成功消息
                     showFeedback('✓ 报名成功！我们会尽快通过微信与您联系。', 'success');
                     form.reset();
                     
-                    // 3秒后隐藏成功消息
+                    // 清理
                     setTimeout(() => {
+                        document.body.removeChild(tempForm);
+                        document.body.removeChild(iframe);
                         feedback.style.display = 'none';
                     }, 5000);
                 } else {
-                    throw new Error('提交失败');
+                    // Entry IDs 未配置，提示用户
+                    throw new Error('需要配置 Google Forms Entry IDs');
                 }
             } catch (error) {
                 console.error('提交错误:', error);
                 
-                // 如果没有配置接口，则显示提示信息并保存到本地
-                showFeedback('提交功能需要配置表单接口。您的信息已临时保存，请联系管理员配置提交接口。', 'error');
-                
-                // 临时保存到 localStorage（仅用于演示）
+                // 保存到本地存储作为备份
                 const submissions = JSON.parse(localStorage.getItem('registrations') || '[]');
                 submissions.push({
                     ...data,
                     timestamp: new Date().toISOString()
                 });
                 localStorage.setItem('registrations', JSON.stringify(submissions));
+                
+                showFeedback('⚠️ 需要完成 Google Forms 配置。您的信息已临时保存。请按以下步骤完成配置：\n\n1. 在 Google Form 中点击"获取预填充链接"\n2. 填写示例数据并获取链接\n3. 将链接发送给管理员配置 entry IDs', 'error');
+                
                 console.log('报名信息已保存到本地:', data);
+                console.log('请访问以下链接获取 entry IDs:', `https://docs.google.com/forms/d/${GOOGLE_FORM_ID}/edit`);
             } finally {
                 // 恢复提交按钮
                 submitBtn.disabled = false;

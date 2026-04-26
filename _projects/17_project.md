@@ -1,22 +1,22 @@
 ---
 layout: page
-title: "Logic · 薛泽扬"
+title: "未完待续 · 林思锴"
 description: "大三 | 电子与信息工程学院 · 通信工程"
-img: assets/img/11.jpg
-importance: 1
+img: assets/img/1.jpg
+importance: 17
 category: work
 related_publications: false
 ---
 
 ## 学员简介
 
-| 姓名 | 薛泽扬 |
+| 姓名 | 林思锴 |
 |------|------|
-| 昵称 | Logic |
+| 昵称 | 未完待续 |
 | 学院 | 电子与信息工程学院 |
 | 专业 | 通信工程 |
 | 年级 | 大三 |
 
 ## 项目方向
 
-地理位置猜测游戏 GeoGuesser，通过AI赋能将地理探索与趣味竞技结合
+多智能体群体智能预测引擎，探索嵌入式设备与多智能体系统的融合创业路径

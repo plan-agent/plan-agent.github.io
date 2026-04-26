@@ -417,49 +417,104 @@ ninja.data = [{
           section: "News",},{id: "news-a-simple-inline-announcement",
           title: 'A simple inline announcement.',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "projects-tina-刘佳妮",
+          title: 'Tina · 刘佳妮',
+          description: "大一 | 经济学院 · 金融学创新班",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/10_project/";
+            },},{id: "projects-hyk-黄宇科",
+          title: 'HYK · 黄宇科',
+          description: "大一 | 计算机与软件学院 · 计算机类",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/11_project/";
+            },},{id: "projects-joanna-丁湘玥",
+          title: 'Joanna · 丁湘玥',
+          description: "大二 | 金融科技学院 · 大数据管理与应用",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/12_project/";
+            },},{id: "projects-嘉-周嘉",
+          title: '嘉 · 周嘉',
+          description: "大三 | 外国语学院 · 英语",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/13_project/";
+            },},{id: "projects-马昕怡",
+          title: '💍 · 马昕怡',
+          description: "大二 | 经济学院 · 会计学",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/14_project/";
+            },},{id: "projects-开森新圆-李馨妍",
+          title: '开森新圆 · 李馨妍',
+          description: "大二 | 人文学院 · 汉语言文学师范",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/15_project/";
+            },},{id: "projects-catzu-田依宸",
+          title: 'catzu · 田依宸',
+          description: "大二 | 传播学院 · 广告学（创意传播设计）",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/16_project/";
+            },},{id: "projects-未完待续-林思锴",
+          title: '未完待续 · 林思锴',
+          description: "大三 | 电子与信息工程学院 · 通信工程",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/17_project/";
+            },},{id: "projects-jwang-tung-hsiy-庄桐熙",
+          title: 'Jwang Tung-Hsiy · 庄桐熙',
+          description: "大一 | 电子与信息工程学院 · 电子信息类",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/18_project/";
+            },},{id: "projects-氼乚-赵毅俊",
+          title: '氼乚 · 赵毅俊',
+          description: "大一 | 电子与信息工程学院 · 通信工程",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/19_project/";
+            },},{id: "projects-logic-薛泽扬",
+          title: 'Logic · 薛泽扬',
+          description: "大三 | 电子与信息工程学院 · 通信工程",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-来-吕俊泽",
+          title: '来 · 吕俊泽',
+          description: "大二 | 电子与信息工程学院 · 电子信息工程",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/20_project/";
+            },},{id: "projects-moonlight-刘梓欣",
+          title: 'MOONLIGHT · 刘梓欣',
+          description: "大一 | 电子与信息工程学院 · 电子信息工程",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+            },},{id: "projects-宋你玫瑰花-宋凯",
+          title: '宋你玫瑰花 · 宋凯',
+          description: "大三 | 电子与信息工程学院 · 电子信息工程",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+            },},{id: "projects-hayley-任悦心",
+          title: 'HAYley · 任悦心',
+          description: "大一 | 经济学院 · 会计学",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
+            },},{id: "projects-拉吉莫拉拉-吴焯盈",
+          title: '拉吉莫拉拉 · 吴焯盈',
+          description: "研究生 | 管理学院 · 工商管理学",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
+            },},{id: "projects-昵称不可为空-武昕承",
+          title: '昵称不可为空 · 武昕承',
+          description: "大三 | 电子与信息工程学院 · 通信工程",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
+            },},{id: "projects-momo-杨文韬",
+          title: 'momo · 杨文韬',
+          description: "大一 | 计算机与软件学院 · 计算机科学与技术",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
+            },},{id: "projects-lester-宁有淞",
+          title: 'Lester · 宁有淞',
+          description: "大一 | 计算机与软件学院 · 软件工程",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
+            },},{id: "projects-oracle-du-杜浩邦",
+          title: 'Oracle_Du · 杜浩邦',
+          description: "大二 | 建筑与城市规划学院 · 建筑学",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
             },},{id: "teachings-data-science-fundamentals",

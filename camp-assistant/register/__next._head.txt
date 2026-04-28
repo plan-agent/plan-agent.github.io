@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[88733,["/camp-assistant/_next/static/chunks/128itwxg_n1-v.js","/camp-assistant/_next/static/chunks/17jts0z89io4q.js"],"ViewportBoundary"]
+3:I[88733,["/camp-assistant/_next/static/chunks/128itwxg_n1-v.js","/camp-assistant/_next/static/chunks/17jts0z89io4q.js"],"MetadataBoundary"]
+4:"$Sreact.suspense"
+5:I[42446,["/camp-assistant/_next/static/chunks/128itwxg_n1-v.js","/camp-assistant/_next/static/chunks/17jts0z89io4q.js"],"IconMark"]
+0:{"rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"双创营报名与答疑助手"}],["$","meta","1",{"name":"description","content":"帮助双创营主办方统一展示活动信息、收集报名、回答常见问题的轻量 Web 应用"}],["$","link","2",{"rel":"icon","href":"/camp-assistant/favicon.ico?favicon.0x3dzn~oxb6tn.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L5","3",{}]]}]}]}],null]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"FvQNwkcyfrSm52O9EXQvz"}

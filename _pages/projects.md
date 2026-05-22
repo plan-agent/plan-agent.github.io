@@ -9,7 +9,32 @@ display_categories: [work, fun]
 horizontal: false
 ---
 
-<!-- pages/projects.md -->
+{% assign second_batch_projects = site.data.second_batch_projects %}
+
+## 第二期项目
+
+<div class="second-batch-projects mb-5">
+  {% for project in second_batch_projects %}
+    <div class="card mb-4">
+      <div class="card-body">
+        <h3 class="card-title">{{ project.title }}</h3>
+        <p class="card-text">{{ project.description }}</p>
+        <p class="card-text mb-0">
+          <strong>学生：</strong>
+          {% for student in project.students %}
+            <a href="{{ '/projects/second-batch/students/' | relative_url }}#{{ student.slug }}">{{ student.name }}</a>
+            {%- unless forloop.last -%}、{%- endunless -%}
+          {% endfor %}
+        </p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+---
+
+## 第一期项目
+
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->

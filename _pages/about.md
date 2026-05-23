@@ -39,7 +39,7 @@ The name highlights four core ideas:
 
 The word **PLAN** also represents blueprint thinking and long-term system design. Our vision is not isolated agents, but interoperable agent networks that can support next-generation standards, infrastructure, and real-world applications.
 
-PLAN Lab is also known in Chinese as **普兰实验室 / 蓝图实验室**.
+PLAN Lab is also known in Chinese as **普蓝实验室**.
 
 ---
 
